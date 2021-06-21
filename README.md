@@ -17,6 +17,10 @@
 <p align="center"><strong>Name</strong><strong>:</strong> MD Hasan Ud-Doula</p>
 <p align="center"><strong>ID</strong><strong>:&nbsp; </strong>1620545042</p>
 <p align="center"><strong>Email</strong><strong>:</strong> <a href="mailto:ud.doula@northsouth.edu">ud.doula@northsouth.edu</a></p>
+<p align="center"><strong><u>Member 3</u></strong><strong><u>:</u></strong></p>
+<p align="center"><strong>Name</strong><strong>:</strong> Mohammad Sazzad Alam </p>
+<p align="center"><strong>ID</strong><strong>:&nbsp; </strong>1611200642</p>
+<p align="center"><strong>Email</strong><strong>:</strong> <a href="mailto:sazzad.alam@northsouth.edu">sazzad.alam@northsouth.edu</a></p>
 <p align="center"><strong>Git Repository</strong><strong>: </strong><a href="https://github.com/WasekRahman/SU19CSE299S16G07NSU/">https://github.com/WasekRahman/SU19CSE299S16G07NSU/</a></p>
 <p align="center"><strong>Date Prepared</strong><strong>: </strong>20/06/2019</p>
 <p><strong>&nbsp;</strong></p>
