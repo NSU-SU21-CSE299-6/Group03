@@ -19,7 +19,7 @@
 <p align="center"><strong>Email</strong><strong>:</strong> <a href="mailto:hosnara.happy@northsouth.edu">hosnara.happy@northsouth.edu</a></p>
 <p align="center"><strong><u>Member 3</u></strong><strong><u>:</u></strong></p>
 <p align="center"><strong>Name</strong><strong>:</strong> Mohammad Sazzad Alam </p>
-<p align="center"><strong>ID</strong><strong>:&nbsp; </strong>1611200642</p>
+<p align="center"><strong>ID</strong><strong>:&nbsp; </strong>1611200</p>
 <p align="center"><strong>Email</strong><strong>:</strong> <a href="mailto:sazzad.alam@northsouth.edu">sazzad.alam@northsouth.edu</a></p>
 <p align="center"><strong>Git Repository</strong><strong>: </strong><a href=""></a></p>
 <p align="center"><strong>Date Prepared</strong><strong>: </strong>27/06/2021</p>
