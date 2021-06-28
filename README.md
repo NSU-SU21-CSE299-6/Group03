@@ -59,19 +59,19 @@ backend web application framework for Node.js</p>
 <p><em>Database</em></p>
 <p>For the database aspect of the project, we will use MongoDB, which is a NoSQL 
 database.</p>
-<p><em>Monetization</em></p>
+<p><strong>Monetization</strong></p>
 <p>Payment will be done through Bkash/cash on delivery unless we find a better automatic 
 alternative. </p>
-<p><em>Social Impact</em></p>
+<p><strong>Social Impact</strong></p>
 <p>Planting trees is being encouraged all over the world, and unlike in other 
 developing countries there is no such initiative in our country regarding this issue. 
 Gardening is also seen as a hassle but through our expert panel suggestion , gardening 
 will be easier than ever</p>
-<p><em>Environmental Impacts</em></p>
+<p><strong>Environmental Impacts</strong></p>
 <p>Pollution is ever-increasing, and global temperature is rising each 
 year. Tree plantation is the way to overcome this issue. This website will make gardening 
 easier, as all plants related accessories will be available at one place.</p>
-<p><em>Business Opportunity</em></p>
+<p><strong>Business Opportunity</strong></p>
 <p>As there is a huge demand for gardening, this will be a profitable 
 business. Many investors will also be interested in the project. </p>
 <p>This will also create employment opportunity as experts will be hired for providing 
