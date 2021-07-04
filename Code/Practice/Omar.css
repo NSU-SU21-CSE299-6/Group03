@@ -1,0 +1,10 @@
+h1 {
+  color: brown;
+  font-weight: 600;
+}
+
+p {
+  color: dodgerblue;
+  font-style: italic;
+  font-size: 5rem;
+}
