@@ -21,7 +21,7 @@
 <p align="center"><strong>Name</strong><strong>:</strong> Mohammad Sazzad Alam </p>
 <p align="center"><strong>ID</strong><strong>:&nbsp; </strong>1611200</p>
 <p align="center"><strong>Email</strong><strong>:</strong> <a href="mailto:sazzad.alam@northsouth.edu">sazzad.alam@northsouth.edu</a></p>
-<p align="center"><strong>Git Repository</strong><strong>: </strong><a href=""></a></p>
+<p align="center"><strong>Git Repository</strong>https://github.com/NSU-SU21-CSE299-6/Group03<strong>: </strong><a href="https://github.com/NSU-SU21-CSE299-6/Group03"></a></p>
 <p align="center"><strong>Date Prepared</strong><strong>: </strong>27/06/2021</p>
 <p><strong>&nbsp;</strong></p>
 <p><strong>&nbsp;</strong></p>
