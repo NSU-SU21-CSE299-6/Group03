@@ -6,7 +6,7 @@
 <p align="center"><strong>Project Proposal</strong></p>
 <p align="center"><strong>Group No</strong>: 3</p>
 <p align="center"><strong>Summer 2021</strong></p>
-<p align="center"><strong>Project Name</strong>: Ecommerce Website for Plants </p>
+<p align="center"><strong>Project Name</strong>:KAKATUA (Ecommerce Website for Plants) </p>
 <p align="center"><strong>Course No</strong>: CSE 299 <strong>Sec</strong><strong>:</strong> 06</p>
 <p align="center"><strong>Faculty</strong>: Shaikh Shawon Arefin Shimon (Sas3)</p>
 <p align="center"><strong><u>Member 1</u></strong><u>:</u></p>
