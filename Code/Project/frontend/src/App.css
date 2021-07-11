@@ -1,0 +1,59 @@
+nav {
+  background-color: #c0ff02;
+  padding: 0.5rem 1rem;
+  height: 90px;
+}
+#login_btn {
+  background-color: #11ad11;
+  padding: 0rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  left: 140px;
+  border-radius: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+#search_btn {
+  background-color: #11ad11;
+  padding: 0.3rem 0.3rem;
+}
+
+#search-field {
+  height: 2rem;
+  padding: 1rem;
+  background-color: rgb(236, 236, 229);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.input-group {
+  position: relative;
+  right: 100px;
+  width: 80%;
+}
+
+#cart {
+  position: relative;
+  left: 120px;
+  color: rgb(24, 184, 9);
+  font-weight: bold;
+}
+#cart_count {
+  position: relative;
+  left: 120px;
+  background-color: #11ad11;
+  padding: 0.1rem 0.1rem;
+  border-radius: 0.2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#logo {
+  height: 35;
+  width: 50px;
+}
+#logo_name {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 0rem;
+  color: #11ad11;
+}
