@@ -1,0 +1,16 @@
+[
+  {
+      "name" : "Clay Pot",
+      "price" : "100",
+      "description" : "Classic 4'' Clay Pot with Saucer",
+      "ratings" : 4.5,
+      "images" : [{
+          "public_id" : "products/ClayPot_j32wcg",
+          "url" : "https://res.cloudinary.com/dufdnyzpy/image/upload/v1626044108/products/ClayPot_j32wcg.jpg"
+      }],
+      "category" : "Pots and Planters",
+      "stock" : 50,
+      "numOfReviews" : 0,
+      "reviews": []
+  } 
+]
