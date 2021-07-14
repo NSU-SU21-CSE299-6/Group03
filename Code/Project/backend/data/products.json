@@ -1,0 +1,58 @@
+[
+  {
+      "name" : "Clay Pot",
+      "price" : "100",
+      "description" : "Classic 4'' Clay Pot with Saucer",
+      "ratings" : 4.5,
+      "images" : [{
+          "public_id" : "products/ClayPot_j32wcg",
+          "url" : "https://res.cloudinary.com/dufdnyzpy/image/upload/v1626044108/products/ClayPot_j32wcg.jpg"
+      }],
+      "category" : "Pots and Planters",
+      "stock" : 50,
+      "numOfReviews" : 6,
+      "reviews": []
+  },
+  {
+    "name" : "Bed-side Vase",
+    "price" : "80",
+    "description" : "5'' narrow vase for planting small plants. Perfect for bed-side tables and shelves.",
+    "ratings" : 4,
+    "images" : [{
+        "public_id" : "products/BedsideVase_xg9eff",
+        "url" : "https://res.cloudinary.com/dufdnyzpy/image/upload/v1626218546/products/BedsideVase_xg9eff.jpg"
+    }],
+    "category" : "Pots and Planters",
+    "stock" : 40,
+    "numOfReviews" : 18,
+    "reviews": []
+  },
+  {
+    "name" : "Slick Black Watering Can",
+    "price" : "350",
+    "description" : "12'' Fashionable Watering Can. Great for daily life usage.",
+    "ratings" : 4.5,
+    "images" : [{
+        "public_id" : "products/SlickBlackWateringCan_qprxfi",
+        "url" : "https://res.cloudinary.com/dufdnyzpy/image/upload/v1626218869/products/SlickBlackWateringCan_qprxfi.jpg"
+    }],
+    "category" : "Watering tools",
+    "stock" : 37,
+    "numOfReviews" : 65,
+    "reviews": []
+  },
+  {
+    "name" : "White Watering Can With Wooden Handle",
+    "price" : "450",
+    "description" : "12'' Ergonomic Watering Can with rounded handle for comfort.",
+    "ratings" : 4.75,
+    "images" : [{
+        "public_id" : "products/WhiteWateringCanWithWoodenHandle_avq2fu",
+        "url" : "https://res.cloudinary.com/dufdnyzpy/image/upload/v1626219010/products/WhiteWateringCanWithWoodenHandle_avq2fu.jpg"
+    }],
+    "category" : "Watering tools",
+    "stock" : 28,
+    "numOfReviews" : 78,
+    "reviews": []
+  }
+]
