@@ -30,7 +30,7 @@ const header = () => {
             </div>
             <div className="col-12 col-md-3 mt-4 mt-md-0 text-left">
                 
-            <span id="cart" class="ml=5 ">Cart&nbsp;</span>
+            <span id="cart" className="ml=5 ">Cart&nbsp;</span>
             <span className="ml-1" id="cart_count">(0)</span>
 
             <button className="btn text-white" id="login_btn">Login</button>

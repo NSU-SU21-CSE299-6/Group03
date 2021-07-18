@@ -3,9 +3,9 @@ import MetaData from './layout/MetaData'
 const Home = () => {
     return (
         <Fragment>
-            
+            <MetaData title='Buy Plants Online'/>
             <h1 id="products_heading">Latest Products</h1>
-        <section id="products" class="container mt-5">
+        <section id="products" className="container mt-5">
          <div className="row">
              <div className="col-sm-12 col-md-6 col-lg-3 my-3">
                <div className="indoor_plant p-3 rounded">

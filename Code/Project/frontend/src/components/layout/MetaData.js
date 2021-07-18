@@ -1,12 +1,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-const MetaData = () => {
+
+
+const MetaData = ({title}) => {
+    let x = title;
     return (
         <Helmet>
-            <title>{'Buy Plants Online - Kaktarua'}</title>
+           <title>{x+' - Kaktarua'}</title> 
         </Helmet>
-    );
+    )
 }
 
 export default MetaData
-
