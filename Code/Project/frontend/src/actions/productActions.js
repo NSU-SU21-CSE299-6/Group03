@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 import {
     ALL_PRODUCTS_REQUEST,
@@ -10,9 +10,14 @@ import {
    export const getProducts = () => async (dispatch) => {
     try{
 
-         dispatch({ type: ALL_PRODUCTS_REQUEST})
+         dispatch({ type: ALL_PRODUCTS_REQUEST })
 
          const { data } = await axios.get('/api/v1/products')
+
+         dispatch({
+             type: ALL_PRODUCTS_SUCCESS,
+             payload: data
+         })
 
     } catch(error){
         dispatch({
@@ -21,4 +26,12 @@ import {
          } )
     }
 
+   }
+   //Clear errors
+
+   export const ClearErrors = () => async (dispatch) => {
+       dispatch({
+           type: CLEAR_ERRORS
+           
+       })
    }
