@@ -26,3 +26,34 @@ exports.registerUser = catchAsyncErrors( async (req, res, next) => {
         token
     })
 })
+
+// user login route> /api/v1/login
+
+exports.loginUser = catchAsyncErrors( async(req, res, next) => {
+    const { email, password} = req.body;
+
+//email and password entry check
+    if(!email || !password) {
+        return next( new Errorhandler('Please enter email & password', 400))
+    }
+    // finding user in db
+    const user = await User.findOne({ email }).select('+password')
+
+    if(!user){
+        return next(new Errorhandler('Invalid username or Password',401));
+    }
+
+    //password check
+    const isPasswordMatched = await user.comparePassword(password);
+
+    if(!isPasswordMatched){
+        return next(new Errorhandler('Invalid username or Password',401));
+    }
+
+    const token = user.getJwtToken();
+
+    res.status(200).json({
+        success: true,
+        token
+    })
+})
