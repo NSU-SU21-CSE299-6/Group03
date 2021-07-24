@@ -14,8 +14,8 @@ exports.registerUser = catchAsyncErrors( async (req, res, next) => {
         email,
         password,
         avatar: {
-            public_id: '',
-            url: ''
+            public_id: 'User/batmetal_cfogq8',
+            url: 'https://res.cloudinary.com/disgusting/image/upload/v1627104921/User/batmetal_cfogq8.jpg'
         }
     })
 
