@@ -4,7 +4,7 @@ const Errorhandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const sendToken = require('../utils/jwtToken');
 
-// Register a user => /api/v1/register
+// Register a user route => /api/v1/register
 
 exports.registerUser = catchAsyncErrors( async (req, res, next) => {
 
@@ -48,4 +48,17 @@ exports.loginUser = catchAsyncErrors( async(req, res, next) => {
     }
 
     sendToken(user,  200, res)
+})
+
+//logout user route => /api/v1/logout
+exports.logout = catchAsyncErrors( async (req, res, next) =>{
+    res.cookie('token', null, {
+        expires : new Date(Date.now()),
+        httpOnly: true
+    })
+
+    res.status(200).json({
+        success: true,
+        message: 'Logged out'
+    })
 })
