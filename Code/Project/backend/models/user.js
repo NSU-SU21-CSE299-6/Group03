@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema({
     },
 
     resetPasswordToken: String,
-    resetpasswordExpire: Date
+    resetPasswordExpire: Date
 
 })
 
@@ -84,7 +84,7 @@ userSchema.methods.getResetPasswordToken = function(){
     this.resetPasswordToken = crypto.createHash('sha256').update(resetToken).digest('hex')
 
     //token expire time
-    this.resetpasswordExpire = Date.now() + 30 * 60 * 1000
+    this.resetPasswordExpire = Date.now() + 30 * 60 * 1000
 
     return resetToken
 }
