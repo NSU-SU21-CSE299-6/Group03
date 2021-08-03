@@ -5,6 +5,7 @@ const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const sendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
+const { send } = require('process');
 
 
 // Register a user route => /api/v1/register
@@ -135,6 +136,26 @@ exports.getUserProfile = catchAsyncErrors( async (req, res, next) => {
         user
     })
 })
+
+
+//update/ change password => /api/v1/password/update
+exports.updatePassword = catchAsyncErrors( async (req, res, next) => {
+    const user = await User.findById(req.user.id).select('+password');
+
+    //check user current password
+    const isMatched = await user.comparePassword(req.body.oldPassword)
+
+    if(!isMatched) {
+        return next(new Errorhandler('old password is incorrect',400));
+    }
+
+    user.password = req.body.password;
+    await user.save();
+
+    sendToken(user, 200, res);
+
+})
+
 
 //logout user route => /api/v1/logout
 exports.logout = catchAsyncErrors( async (req, res, next) =>{
