@@ -6,6 +6,7 @@ const sendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
 const { send } = require('process');
+const ErrorHandler = require('../utils/errorHandler');
 
 
 // Register a user route => /api/v1/register
@@ -188,5 +189,33 @@ exports.logout = catchAsyncErrors( async (req, res, next) =>{
     res.status(200).json({
         success: true,
         message: 'Logged out'
+    })
+})
+
+//admin routes
+
+//get all users => /api/v1/admin/users
+
+exports.allUsers = catchAsyncErrors( async (req, res, next) =>{
+    const users = await User.find();
+
+    res.status(200).json({
+        success: true,
+        users
+
+    })
+})
+
+//get user details => /api/v1/admin/user/:id
+exports.getUserDetails = catchAsyncErrors( async (req, res, next) =>{
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new ErrorHandler(`User with ${req.params.id} id was not found`,400))
+    }
+
+    res.status(200).json({
+        success: true,
+        user
     })
 })
