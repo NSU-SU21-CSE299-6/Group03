@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
- 
+ import ProductDetails from './components/product/ProductDetails';
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
+
+
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
     <Header/>
     <div className="container container-fluid"></div>
     <Route path = "/" component={Home} exact/>
+    <Route path = "/product/:id" component={ProductDetails} exact/>
+ 
     <Footer/>
     </div>
     </Router>
