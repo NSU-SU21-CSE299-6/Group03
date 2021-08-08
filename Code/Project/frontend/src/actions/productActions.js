@@ -10,12 +10,15 @@ import {
     CLEAR_ERRORS 
    } from '../constants/productConstants'
 
-   export const getProducts = () => async (dispatch) => {
+export const getProducts = (currentPage = 1) => async (dispatch) => {
     try{
 
          dispatch({ type: ALL_PRODUCTS_REQUEST })
 
-         const { data } = await axios.get('/api/v1/products')
+         let x = currentPage;
+         let str = '/api/v1/products?page=' + x;
+
+         const { data } = await axios.get(str)
 
          dispatch({
              type: ALL_PRODUCTS_SUCCESS,
@@ -31,12 +34,15 @@ import {
 
    }
 
-   export const getProductDetails = (id) => async (dispatch) => {
+export const getProductDetails = (id) => async (dispatch) => {
     try{
 
          dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-         const { data } = await axios.get('/api/v1/product/${id}')
+         let y = id;
+         let str2 = '/api/v1/product/' + y;
+
+         const { data } = await axios.get(str2)
 
          dispatch({
              type: PRODUCT_DETAILS_SUCCESS,
