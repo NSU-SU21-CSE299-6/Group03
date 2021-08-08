@@ -10,13 +10,14 @@ import {
     CLEAR_ERRORS 
    } from '../constants/productConstants'
 
-export const getProducts = (currentPage = 1) => async (dispatch) => {
+export const getProducts = (keyword = '', currentPage = 1) => async (dispatch) => {
     try{
 
          dispatch({ type: ALL_PRODUCTS_REQUEST })
 
          let x = currentPage;
-         let str = '/api/v1/products?page=' + x;
+         let z = keyword;
+         let str =  '/api/v1/products?keyword=' + z + '&page=' + x;
 
          const { data } = await axios.get(str)
 
