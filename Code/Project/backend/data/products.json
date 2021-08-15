@@ -54,5 +54,23 @@
     "stock" : 28,
     "numOfReviews" : 78,
     "reviews": []
+  },
+  {
+    "name" : "Premium Designer Watering Can by Cheng Lee",
+    "price" : "1250",
+    "description" : "12'' Premium Watering Can, fashionable. Designed by famous gardener and designer Cheng Lee. Japanese design and ergonomic. High demand. 2L in volume enough for watering all multiple tubs. Best for both professional and home gardening. Must have for collectors and plant lovers.",
+    "ratings" : 2.5,
+    "images" : [{
+        "public_id" : "products/PremiumDesignerWateringCan_nf0abv",
+        "url" : "https://res.cloudinary.com/dufdnyzpy/image/upload/v1629063896/products/PremiumDesignerWateringCan_nf0abv.jpg"
+    }],
+    "category" : "Watering tools",
+    "stock" : 83,
+    "numOfReviews" : 16,
+    "reviews": []
   }
 ]
+
+
+
+
