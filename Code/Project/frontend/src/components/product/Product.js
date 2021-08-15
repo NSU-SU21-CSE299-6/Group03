@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom'
 
 
 
-const Product = ({ product }) => {
+const Product = ({ product, col }) => {
 
     let product_rating = (product.ratings/ 5) * 100
     let product_ratings = product_rating + "%"
     let productID = product._id;
+    let c = col
 
     return (
 
-        <div className="col-sm-12 col-md-6 col-lg-3 my-3">
+        <div className={"col-sm-12 col-md-6 col-lg-c my-3"}>
                <div className="indoor_plant p-3 rounded">
                   <img 
                   id="indoor_plant"

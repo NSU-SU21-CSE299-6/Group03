@@ -17,7 +17,18 @@ const Range = createSliderWithTooltip(Slider.Range)
 const Home = ({ match }) => {
                      
     const [currentPage, setCurrentPage] = useState(1)
-    const [price, setPrice] = useState([1, 1000])   
+    const [price, setPrice] = useState([1, 5000]) 
+    const [category, setCategory] = useState('')
+
+    const categories = [
+        'Pots and Planters',
+        'Watering tools',
+        'Fertilizers',
+        'Bags',
+        'Books',
+        'Merchandizes'
+    ]
+
     const alert = useAlert();
     const dispatch = useDispatch();
     const { loading, products, error, productsCount, resPerPage} = useSelector(state => state.products)
@@ -27,11 +38,11 @@ const Home = ({ match }) => {
         if(error) {
            return  alert.error(error)
            }
-       dispatch(getProducts(keyword, currentPage, price));
+       dispatch(getProducts(keyword, currentPage, price, category));
 
       
 
-    }, [dispatch, alert, error, keyword, currentPage, price])
+    }, [dispatch, alert, error, keyword, currentPage, price, category])
 
 
     function setCurrentPageNo(pageNumber){
@@ -55,13 +66,12 @@ const Home = ({ match }) => {
                   <div className="px-5">
                       <Range
                         marks={{
-                            1 : '$1',
-                            1000 : '$1000'
+                            1 : '1 TK',
+                            5000 : '5000 TK'
                         }}
                         min={1}
-                        max={1000}
-                        defaultValue={[1, 1000]}
-                        tipFormatter={value => '$' + {value}}
+                        max={5000}
+                        defaultValue={[1, 5000]}
                         tipProps={{
                             placement: "top",
                             visible: true
@@ -69,13 +79,45 @@ const Home = ({ match }) => {
                         value={price}
                         onChange={price => setPrice(price)}  
                       />
-                  </div>
 
+                        <hr className="my-5" />
+                        <div className="mt-5">
+                                <h4 className="mb-3">
+                                    Categories
+                                </h4>
+
+                                <ul className="pl-0">
+                                    {categories.map(category => (
+                                        <li
+                                                style={{
+                                                    cursor: 'pointer',
+                                                    listStyleType: 'none'
+                                                    }}
+                                                    key={category}
+                                                    onClick={() => setCategory(category)}
+                                                    >
+                                                {category}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                  </div>
                 </div>
+
+                <div className="col-6 col-md-9">
+                    <div className="row">
+                        {products.map(product => (
+                    <Product key={product._id} product={product} col={4}/>
+      
+                   ))}
+                    </div>
+                </div>
+
                 </Fragment>
             ): (
-               products && products.map(product => (
-                    <Product key={product._id} product={product} />
+                    products.map(product => (
+                    <Product key={product._id} product={product} col={3}/>
       
                    ))
             )}
