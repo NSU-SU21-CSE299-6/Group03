@@ -30,7 +30,7 @@ const Product = ({ product, col }) => {
                    <span id="no-of-reviews">({product.numOfReviews}Reviews)</span>
                  </div>
                     <p className="indoor_plant-text">(TK:{ product.price})</p>
-                    <Link to={'./product/' + productID} id="view_btn" className="btn btn-block">View Details </Link>
+                    <Link to={'/product/' + productID} id="view_btn" className="btn btn-block">View Details </Link>
                 </div>
                </div>
              </div>
