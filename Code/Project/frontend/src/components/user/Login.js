@@ -66,7 +66,7 @@ const Login = ({history}) => {
                                     />
                                 </div>
 
-                                <a href="#" className="float-right mb-4">Forgot Password?</a>
+                                <Link to="/password/forgot" className="float-right mb-4">Forgot Password?</Link>
 
                                 <button
                                     id="login_button"
@@ -76,7 +76,7 @@ const Login = ({history}) => {
                                     LOGIN
                                 </button>
 
-                                <a href="#" className="float-right mt-3">New User?</a>
+                                <Link to="/register" className="float-right mt-3">New User?</Link>
                             </form>
                         </div>
                     </div>
