@@ -72,7 +72,11 @@ const Login = ({ history }) => {
                                     />
                                 </div>
 
+                                <div>
+
                                 <Link to="/password/forgot" className="float-right mb-4">Forgot Password?</Link>
+
+                                </div>
 
                                 <button
                                     id="login_button"
@@ -82,7 +86,11 @@ const Login = ({ history }) => {
                                     LOGIN
                                 </button>
 
+                                <div>
+
                                 <Link to="/register" className="float-right mt-3">New User?</Link>
+
+                                </div>
                             </form>
                         </div>
                     </div>
