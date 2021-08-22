@@ -3,11 +3,15 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { productsReducer, productDetailsReducer } from './reducers/productReducers'
+
+import {authReducer } from './reducers/userReducers'
+
 import { cartReducer } from './reducers/cartReducers';
 
 const reducer = combineReducers({
    products: productsReducer,
    productDetails: productDetailsReducer,
+   auth: authReducer,
    cart: cartReducer
 })
 

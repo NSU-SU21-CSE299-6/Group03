@@ -8,6 +8,8 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
 
+import Login from './components/user/Login'
+
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
     <Route path = "/" component={Home} exact/>
     <Route path = "/search/:keyword" component={Home} />
     <Route path = "/product/:id" component={ProductDetails} exact/>
+
+    <Route path="/login" component={Login}/>
 
     <Route path = "/cart" component={Cart} exact/>
 

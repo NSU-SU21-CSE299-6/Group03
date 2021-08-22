@@ -30,7 +30,7 @@ const Header = () => {
                         <span className="ml-1" id="cart_count">{cartItems.length}</span>
             </Link>
 
-            <button className="btn text-white" id="login_btn">Login</button>
+            <Link to="/login" className="btn text-white ml-4" id="login_btn">Login</Link>
             </div>
         </nav>
     </Fragment>    
