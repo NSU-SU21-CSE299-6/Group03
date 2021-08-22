@@ -5,13 +5,19 @@ const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const sendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
-const { send } = require('process');
+const cloudinary = require('cloudinary');
 const ErrorHandler = require('../utils/errorHandler');
 
 
 // Register a user route => /api/v1/register
 
 exports.registerUser = catchAsyncErrors( async (req, res, next) => {
+
+    const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+        folder: 'avatars',
+        width: 150,
+        crop: "scale"
+    })
 
     const { name, email, password }= req.body;
 
@@ -20,8 +26,8 @@ exports.registerUser = catchAsyncErrors( async (req, res, next) => {
         email,
         password,
         avatar: {
-            public_id: 'User/batmetal_cfogq8',
-            url: 'https://res.cloudinary.com/disgusting/image/upload/v1627104921/User/batmetal_cfogq8.jpg'
+            public_id: result.public_id,
+            url: result.secure_url
         }
     })
 
