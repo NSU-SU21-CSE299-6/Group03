@@ -12,7 +12,7 @@ const Register = ({ history }) => {
          password: '',
      })
 
-     const {name, email, password } = useState('')
+     const {name, email, password } = user;
 
      const [avatar, setAvatar] = useState('')
      const[avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
@@ -47,7 +47,7 @@ const Register = ({ history }) => {
     dispatch(register(formData))
   }
 
-  const onChange= e => {
+  const onChange = e => {
       if(e.target.name === 'avatar') {
          const reader = new FileReader();
 
@@ -70,7 +70,7 @@ const Register = ({ history }) => {
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler}encType='multipart/form-data'>
+                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
                         <h1 className="mb-3">Register</h1>
                         <div className="form-group">
                             <label htmlFor="email_field">Name</label>
@@ -108,6 +108,7 @@ const Register = ({ history }) => {
 
                         <div className="form-group">
                             <label htmlFor="avatar-upload">Avatar</label>
+                           <div className='d-flex align-items-center'>
                             <div>
                                 <figure className="avatar mr-3 item-rt1">
                                     <img
@@ -129,13 +130,14 @@ const Register = ({ history }) => {
                                 <label className="custom-file-label" htmlFor='customFile'>Choose Avatar</label>     
                                 </div>
                                 </div>
-                        
+                               </div>  
                             <button
                                id="register_button"
                                type="submit"
                                className="btn btn-block py-3"
                                disabled={loading ? true : false}
-                            >REGISTER
+                            >
+                                REGISTER
                             </button>
                     </form>
 
