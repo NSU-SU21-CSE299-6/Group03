@@ -38,15 +38,12 @@ nav {
   width: 80%;
 }
 
-#cart {
-  position: relative;
-  left: 120px;
+#cart,
+#header_name {
   color: rgb(24, 184, 9);
   font-weight: bold;
 }
 #cart_count {
-  position: relative;
-  left: 120px;
   background-color: #11ad11;
   padding: 0.1rem 0.1rem;
   border-radius: 0.2rem;
