@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-
+import Shipping from './components/cart/Shipping';
 import ProductDetails from './components/product/ProductDetails';
 
 import Cart from './components/cart/Cart'
@@ -36,7 +36,7 @@ function App() {
     <Route path="/register" component={Register}/>
 
     <Route path = "/cart" component={Cart} exact/>
-
+    <Route path = "/shipping" component={Shipping} />
     </div>
     <Footer/>
     </div>

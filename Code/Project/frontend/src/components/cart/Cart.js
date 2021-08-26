@@ -7,7 +7,7 @@ import MetaData from '../layout/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 
-const Cart = () => {
+const Cart = ({ history }) => {
 
   const dispatch = useDispatch();
 
@@ -33,7 +33,12 @@ const decreaseQty = (id, quantity) => {
     dispatch(addItemToCart(id, newQty))
 }
 
+   const checkoutHandler = () => {
+     history.push('/login?redirect=shipping')
+   }
+
   return (
+
     <div>
 
       <MetaData title={'Your Cart'}/>
@@ -95,7 +100,7 @@ const decreaseQty = (id, quantity) => {
                     <p>Est. total: <span className="order-summary-values">TK{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)}</span></p>
     
                     <hr />
-                    <button id="checkout_btn" className="btn btn-primary btn-block">Check out</button>
+                    <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Check out</button>
                 </div>
             </div>
         </div>
