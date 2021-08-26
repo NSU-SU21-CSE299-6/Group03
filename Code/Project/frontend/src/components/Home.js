@@ -32,7 +32,7 @@ const Home = ({ match }) => {
 
     const alert = useAlert();
     const dispatch = useDispatch();
-    const { loading, products, error, productsCount, resPerPage} = useSelector(state => state.products)
+    const { loading, products, error, productsCount, resPerPage, filteredProductsCount} = useSelector(state => state.products)
     const keyword = match.params.keyword
 
     useEffect(() => {
@@ -50,6 +50,10 @@ const Home = ({ match }) => {
         setCurrentPage(pageNumber)
     }
 
+    let count = productsCount;
+    if (keyword) {
+        count = filteredProductsCount
+    }
     
     
     return (
@@ -159,19 +163,22 @@ const Home = ({ match }) => {
          </div>
         </section>
 
-        <div className="d-flex justify-content-center mt-5"></div>
-                <Pagination
-                    activePage={currentPage}
-                    itemsCountPerPage={resPerPage}
-                    totalItemsCount = {productsCount}
-                    onChange = {setCurrentPageNo}
-                    nextPageText = {'Next'}
-                    prevPageText = {'Prev'}
-                    firstPageText = {'First'}
-                    lastPageText = {'Last'}
-                    itemClass = "page-item"
-                    linkClass = "page-link"
-                />
+        {resPerPage <= count && (
+                        <div className="d-flex justify-content-center mt-5">
+                            <Pagination
+                                activePage={currentPage}
+                                itemsCountPerPage={resPerPage}
+                                totalItemsCount={productsCount}
+                                onChange={setCurrentPageNo}
+                                nextPageText={'Next'}
+                                prevPageText={'Prev'}
+                                firstPageText={'First'}
+                                lastPageText={'Last'}
+                                itemClass="page-item"
+                                linkClass="page-link"
+                            />
+                        </div>
+                    )}
 
                 </Fragment>
             )}
