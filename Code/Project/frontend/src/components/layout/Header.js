@@ -51,24 +51,17 @@ const Header = () => {
 
                             <div className="btn mr-4" type="button">
 
-                                <figure className="avatar avatar-nav">
+                                <Link to="/me" className="avatar avatar-nav">
                                     <img
                                         src={user.avatar && user.avatar.url}
                                         alt={user && user.name}
                                         className="rounded-circle"
                                     />
-                                </figure>
+                                </Link>
                                 <span id="header_name">{user && user.name}</span>
                                 <span className="text-danger p-2" to="/" onClick={logoutHandler}>
                                     Logout
                                 </span>
-                            </div>
-
-                            <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
-
-
-                                
-
                             </div>
 
 

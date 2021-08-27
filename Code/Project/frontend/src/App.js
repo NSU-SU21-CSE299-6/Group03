@@ -5,6 +5,7 @@ import ProductDetails from './components/product/ProductDetails';
 
 import Cart from './components/cart/Cart'
 import Register from './components/user/Register';
+import Profile from './components/user/Profile';
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -34,6 +35,7 @@ function App() {
 
     <Route path="/login" component={Login}/>
     <Route path="/register" component={Register}/>
+    <Route path="/me" component={Profile} exact/>
 
     <Route path = "/cart" component={Cart} exact/>
     <Route path = "/shipping" component={Shipping} />
