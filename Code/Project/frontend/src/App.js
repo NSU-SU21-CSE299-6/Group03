@@ -39,7 +39,7 @@ function App() {
     <ProtectedRoute path="/me" component={Profile} exact/>
 
     <Route path = "/cart" component={Cart} exact/>
-    <Route path = "/shipping" component={Shipping} />
+    <ProtectedRoute path = "/shipping" component={Shipping} />
     </div>
     <Footer/>
     </div>
