@@ -12,6 +12,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
 
 import Login from './components/user/Login'
+import ProtectedRoute from './components/route/ProtectedRoute'
 
 import { loadUser } from './actions/userActions'
 import store from './store'
@@ -35,7 +36,7 @@ function App() {
 
     <Route path="/login" component={Login}/>
     <Route path="/register" component={Register}/>
-    <Route path="/me" component={Profile} exact/>
+    <ProtectedRoute path="/me" component={Profile} exact/>
 
     <Route path = "/cart" component={Cart} exact/>
     <Route path = "/shipping" component={Shipping} />
