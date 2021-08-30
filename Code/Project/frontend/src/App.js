@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Shipping from './components/cart/Shipping';
 import ProductDetails from './components/product/ProductDetails';
-
+import ConfirmOrder from './components/cart/ConfirmOrder';
 import Cart from './components/cart/Cart'
 import Register from './components/user/Register';
 import Profile from './components/user/Profile';
@@ -42,6 +42,8 @@ function App() {
 
     <Route path = "/cart" component={Cart} exact/>
     <ProtectedRoute path = "/shipping" component={Shipping} />
+    <ProtectedRoute path = "/order/confirm" component={ConfirmOrder} />
+
     </div>
     <Footer/>
     </div>
