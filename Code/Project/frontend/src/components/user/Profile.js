@@ -36,6 +36,10 @@ const Profile = () => {
                             <h4>Joined On</h4>
                             <p>{String(user.createdAt).substring(0, 10)}</p>
 
+                            <Link to="/password/update" className="btn btn-primary btn-block mt-3">
+                                Change Password
+                            </Link>
+
                         </div>
                     </div>
                 </Fragment>
