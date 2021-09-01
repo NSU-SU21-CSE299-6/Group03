@@ -16,6 +16,17 @@ const ConfirmOrder = ({ history }) => {
     const taxPrice = Number((0.05 * itemPrice))
     const totalPrice = (itemPrice + shippingPrice + taxPrice)
 
+    const proceedToPayment = () => {
+        const data = {
+            itemPrice: itemPrice,
+            shippingPrice,
+            taxPrice,
+            totalPrice
+        }
+       sessionStorage.setItem('orderInfo', JSON.stringify(data))
+       history.push('/payment')
+    }
+
     let x = shippingInfo.address;
     let y = shippingInfo.city;
     let z = shippingInfo.postalCode;
@@ -75,7 +86,7 @@ const ConfirmOrder = ({ history }) => {
                            <p>Total: <span className="order-summary-values"></span>{totalPrice}TK</p>
 
                            <hr />
-                           <button id="checkout_btn" className="btn btn-primary btn-block">Proceed To Payment</button>
+                           <button id="checkout_btn" className="btn btn-primary btn-block" onClick={proceedToPayment}>Proceed To Payment</button>
                    </div>
             </div>
         </div>

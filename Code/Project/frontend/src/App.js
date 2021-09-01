@@ -8,7 +8,7 @@ import Register from './components/user/Register';
 import Profile from './components/user/Profile';
 import UpdateProfile from './components/user/UpdateProfile';
 import UpdatePassword from './components/user/UpdatePassword';
-
+import Payment from './components/cart/Payment';
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
@@ -45,7 +45,7 @@ function App() {
     <Route path = "/cart" component={Cart} exact/>
     <ProtectedRoute path = "/shipping" component={Shipping} />
     <ProtectedRoute path = "/order/confirm" component={ConfirmOrder} />
-
+    <ProtectedRoute path = "/Payment" component={Payment} />
     </div>
     <Footer/>
     </div>
