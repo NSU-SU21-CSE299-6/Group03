@@ -55,10 +55,13 @@ const Header = () => {
                                     <img
                                         src={user.avatar && user.avatar.url}
                                         alt={user && user.name}
-                                        className="rounded-circle"
+                                        className="rounded-circle p-2"
                                     />
                                 </Link>
-                                <span id="header_name">{user && user.name}</span>
+                                <Link to="/me" id="header_name" style={{color: "white", backgroundColor: "#11ad11", 'borderRadius':'5px', textDecoration: 'none', padding: '0.25rem'}}>{user && user.name}</Link>
+                                {user && user.role === 'admin' && (
+                                    <Link className="p-2" to="/dashboard" id="header_name" style={{ textDecoration: 'none' }}>Dashboard</Link>
+                                )}
                                 <span className="text-danger p-2" to="/" onClick={logoutHandler}>
                                     Logout
                                 </span>
