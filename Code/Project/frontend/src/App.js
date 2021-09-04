@@ -14,6 +14,7 @@ import Payment from './components/cart/Payment';
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
+import OrderSuccess from './components/cart/OrderSuccess';
 
 import Login from './components/user/Login'
 import ProtectedRoute from './components/route/ProtectedRoute'
@@ -49,6 +50,7 @@ function App() {
     <Route path = "/cart" component={Cart} exact/>
     <ProtectedRoute path = "/shipping" component={Shipping} />
     <ProtectedRoute path = "/order/confirm" component={ConfirmOrder} />
+    <ProtectedRoute path = "/success" component={OrderSuccess} />
     <ProtectedRoute path = "/Payment" component={Payment} />
     </div>
     <Footer/>

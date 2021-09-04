@@ -29,7 +29,7 @@ const Cart = ({ history }) => {
 const decreaseQty = (id, quantity) => {
    const newQty = quantity - 1;
 
-    if(newQty <= 1) return;
+    if(newQty <= 0) return;
     dispatch(addItemToCart(id, newQty))
 }
 
