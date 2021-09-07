@@ -15,7 +15,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
 import OrderSuccess from './components/cart/OrderSuccess';
-
+import ListOrders from './components/orders/ListOrders';
 import Login from './components/user/Login'
 import ProtectedRoute from './components/route/ProtectedRoute'
 
@@ -52,6 +52,7 @@ function App() {
     <ProtectedRoute path = "/order/confirm" component={ConfirmOrder} />
     <ProtectedRoute path = "/success" component={OrderSuccess} />
     <ProtectedRoute path = "/Payment" component={Payment} />
+    <ProtectedRoute path = "/orders/me" component={ListOrders} exact />
     </div>
     <Footer/>
     </div>
