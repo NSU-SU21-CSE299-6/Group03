@@ -18,7 +18,7 @@ import OrderSuccess from './components/cart/OrderSuccess';
 import ListOrders from './components/orders/ListOrders';
 import Login from './components/user/Login'
 import ProtectedRoute from './components/route/ProtectedRoute'
-
+import Dashboard from './components/admin/Dashboard';
 import { loadUser } from './actions/userActions'
 import store from './store'
 
@@ -53,7 +53,9 @@ function App() {
     <ProtectedRoute path = "/success" component={OrderSuccess} />
     <ProtectedRoute path = "/Payment" component={Payment} />
     <ProtectedRoute path = "/orders/me" component={ListOrders} exact />
+    
     </div>
+    <ProtectedRoute path = "/dashboard" isAdmin={true} component={Dashboard} exact />
     <Footer/>
     </div>
     </Router>
