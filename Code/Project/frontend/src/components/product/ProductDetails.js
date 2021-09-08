@@ -3,19 +3,23 @@ import {useAlert} from 'react-alert'
 import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProductDetails, clearErrors } from '../../actions/productActions'
+import { getProductDetails, newReview, clearErrors } from '../../actions/productActions'
 import { Carousel } from 'react-bootstrap'
 import { addItemToCart } from '../../actions/cartActions'
+import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 
 
 const ProductDetails = ({ match}) => {
    
         const [quantity, setQuantity] = useState(1)
+        const [rating, setRating] =useState(0);
+        const [comment, setComment] = useState('');
 
     const dispatch = useDispatch();
 
     const { loading, error, product } = useSelector(state => state.productDetails)
     const { user } = useSelector(state => state.auth)
+    const { error: reviewError, success } = useSelector(state => state.newReview)
     const alert = useAlert();
 
     useEffect(() => {
@@ -26,7 +30,18 @@ const ProductDetails = ({ match}) => {
           dispatch(clearErrors())
       }
 
-    }, [dispatch, alert, error, match.params.id])
+      if(reviewError){
+          alert.error(reviewError);
+          dispatch(clearErrors())
+      }
+
+      if(success) {
+          alert.success('Review Posted Successfully');
+          dispatch({ type: NEW_REVIEW_RESET })
+
+      }
+
+    }, [dispatch, alert, error, reviewError, match.params.id, success])
 
     const addToCart = () => {
         dispatch(addItemToCart(match.params.id, quantity));
@@ -75,6 +90,9 @@ const ProductDetails = ({ match}) => {
                 index=1;
             }
         }
+
+        setRating(index)
+
     }
 
     function star_two() {
@@ -101,6 +119,9 @@ const ProductDetails = ({ match}) => {
                 index=2;
             }
         }
+
+        setRating(index)
+
     }
 
     function star_three() {
@@ -127,6 +148,9 @@ const ProductDetails = ({ match}) => {
                 index=3;
             }
         }
+
+        setRating(index)
+
     }
 
     function star_four() {
@@ -153,6 +177,9 @@ const ProductDetails = ({ match}) => {
                 index=4;
             }
         }
+
+        setRating(index)
+
     }
 
     function star_five() {
@@ -175,10 +202,20 @@ const ProductDetails = ({ match}) => {
             st_five.classList.remove('orange')
             index=4;
         }
+
+        setRating(index)
+
     }
 
-    
-    
+    const reviewHandler = () => {
+        const formData = new FormData();
+
+        formData.set('rating', rating);
+        formData.set('comment', comment);
+        formData.set('productId', match.params.id);
+
+        dispatch(newReview(formData));
+    }
 
     let index = 0;
     let product_rating = (product.ratings/ 5) * 100
@@ -248,47 +285,18 @@ const ProductDetails = ({ match}) => {
                                                     <textarea
                                                         name="review"
                                                         id="review" className="form-control mt-3"
-                                                        
+                                                        value={comment}
+                                                        onChange={(e) => setComment(e.target.value)}                                   
                                                     >
 
                                                     </textarea>
 
-                                                    <button className="btn my-3 float-right review-btn px-4 text-white" data-dismiss="modal" aria-label="Close">Submit</button>
+                                                    <button className="btn my-3 float-right review-btn px-4 text-white" onClick={reviewHandler}>Submit</button>
                                                 </div>
                                 :
                                 <div className="alert alert-danger mt-5" type='alert'>Login to post your review.</div>
                             }
 
-
-                            <div className="row mt-2 mb-5">
-                                <div className="rating w-50">
-
-                                    <div className="modal fade" id="ratingModal" tabIndex="-1" role="dialog" aria-labelledby="ratingModalLabel" aria-hidden="true">
-                                        <div className="modal-dialog" role="document">
-                                            <div className="modal-content">
-                                                <div className="modal-header">
-                                                    <h5 className="modal-title" id="ratingModalLabel">Submit Review</h5>
-                                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div className="modal-body">
-
-                                                    <ul className="stars" >
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
                     </div>
 
