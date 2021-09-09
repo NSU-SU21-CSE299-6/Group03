@@ -2,19 +2,25 @@ import React, { Fragment, useState, useEffect } from 'react'
 import {useAlert} from 'react-alert'
 import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
+import ListReviews from '../review/ListReviews'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProductDetails, clearErrors } from '../../actions/productActions'
+import { getProductDetails, newReview, clearErrors } from '../../actions/productActions'
 import { Carousel } from 'react-bootstrap'
 import { addItemToCart } from '../../actions/cartActions'
+import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 
 
 const ProductDetails = ({ match}) => {
    
         const [quantity, setQuantity] = useState(1)
+        const [rating, setRating] =useState(0);
+        const [comment, setComment] = useState('');
 
     const dispatch = useDispatch();
 
     const { loading, error, product } = useSelector(state => state.productDetails)
+    const { user } = useSelector(state => state.auth)
+    const { error: reviewError, success } = useSelector(state => state.newReview)
     const alert = useAlert();
 
     useEffect(() => {
@@ -25,7 +31,18 @@ const ProductDetails = ({ match}) => {
           dispatch(clearErrors())
       }
 
-    }, [dispatch, alert, error, match.params.id])
+      if(reviewError){
+          alert.error(reviewError);
+          dispatch(clearErrors())
+      }
+
+      if(success) {
+          alert.success('Review Posted Successfully');
+          dispatch({ type: NEW_REVIEW_RESET })
+
+      }
+
+    }, [dispatch, alert, error, reviewError, match.params.id, success])
 
     const addToCart = () => {
         dispatch(addItemToCart(match.params.id, quantity));
@@ -48,6 +65,160 @@ const ProductDetails = ({ match}) => {
         setQuantity(qty)   
     }
 
+    
+    
+
+    function star_one() {
+
+        const st_one = document.querySelector('.st_one');
+        const st_two = document.querySelector('.st_two');
+        const st_three = document.querySelector('.st_three');
+        const st_four = document.querySelector('.st_four');
+        const st_five = document.querySelector('.st_five');
+
+        if(index == 0){
+            st_one.classList.add('orange');
+            index=1;
+        }else{           
+            st_two.classList.remove('orange')         
+            st_three.classList.remove('orange')         
+            st_four.classList.remove('orange')         
+            st_five.classList.remove('orange')         
+            if(index==1){
+                st_one.classList.remove('orange')
+                index = 0;
+            }else{
+                index=1;
+            }
+        }
+
+        setRating(index)
+
+    }
+
+    function star_two() {
+
+        const st_one = document.querySelector('.st_one');
+        const st_two = document.querySelector('.st_two');
+        const st_three = document.querySelector('.st_three');
+        const st_four = document.querySelector('.st_four');
+        const st_five = document.querySelector('.st_five');
+        
+
+        if(index == 0 || index == 1){
+            st_one.classList.add('orange');
+            st_two.classList.add('orange');
+            index=2;
+        }else{
+            st_three.classList.remove('orange')
+            st_four.classList.remove('orange')
+            st_five.classList.remove('orange')
+            if(index==2){
+                st_two.classList.remove('orange');
+                index=1;
+            }else{
+                index=2;
+            }
+        }
+
+        setRating(index)
+
+    }
+
+    function star_three() {
+
+        const st_one = document.querySelector('.st_one');
+        const st_two = document.querySelector('.st_two');
+        const st_three = document.querySelector('.st_three');
+        const st_four = document.querySelector('.st_four');
+        const st_five = document.querySelector('.st_five');
+        
+
+        if(index == 0 || index == 1 || index == 2){
+            st_one.classList.add('orange');
+            st_two.classList.add('orange');
+            st_three.classList.add('orange');
+            index=3;
+        }else{
+            st_four.classList.remove('orange')
+            st_five.classList.remove('orange')
+            if(index==3){
+                st_three.classList.remove('orange');
+                index=2;
+            }else{
+                index=3;
+            }
+        }
+
+        setRating(index)
+
+    }
+
+    function star_four() {
+
+        const st_one = document.querySelector('.st_one');
+        const st_two = document.querySelector('.st_two');
+        const st_three = document.querySelector('.st_three');
+        const st_four = document.querySelector('.st_four');
+        const st_five = document.querySelector('.st_five');
+        
+
+        if(index == 0 || index == 1 || index == 2 || index==3){
+            st_one.classList.add('orange');
+            st_two.classList.add('orange');
+            st_three.classList.add('orange');
+            st_four.classList.add('orange');
+            index=4;
+        }else{
+            st_five.classList.remove('orange')
+            if(index==4){
+                st_four.classList.remove('orange');
+                index=3;
+            }else{
+                index=4;
+            }
+        }
+
+        setRating(index)
+
+    }
+
+    function star_five() {
+
+        const st_one = document.querySelector('.st_one');
+        const st_two = document.querySelector('.st_two');
+        const st_three = document.querySelector('.st_three');
+        const st_four = document.querySelector('.st_four');
+        const st_five = document.querySelector('.st_five');
+        
+
+        if(index == 0 || index == 1 || index == 2 || index==3 || index == 4){
+            st_one.classList.add('orange');
+            st_two.classList.add('orange');
+            st_three.classList.add('orange');
+            st_four.classList.add('orange');
+            st_five.classList.add('orange');
+            index=5;
+        }else{
+            st_five.classList.remove('orange')
+            index=4;
+        }
+
+        setRating(index)
+
+    }
+
+    const reviewHandler = () => {
+        const formData = new FormData();
+
+        formData.set('rating', rating);
+        formData.set('comment', comment);
+        formData.set('productId', match.params.id);
+
+        dispatch(newReview(formData));
+    }
+
+    let index = 0;
     let product_rating = (product.ratings/ 5) * 100
     let productRatings = product_rating + "%"
     let productPrice = product.price
@@ -102,38 +273,37 @@ const ProductDetails = ({ match}) => {
                             <p>{product.description}</p>
                             <hr />
 
-
-                            <div className="row mt-2 mb-5">
-                                <div className="rating w-50">
-
-                                    <div className="modal fade" id="ratingModal" tabIndex="-1" role="dialog" aria-labelledby="ratingModalLabel" aria-hidden="true">
-                                        <div className="modal-dialog" role="document">
-                                            <div className="modal-content">
-                                                <div className="modal-header">
-                                                    <h5 className="modal-title" id="ratingModalLabel">Submit Review</h5>
-                                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div className="modal-body">
+                            {user ? <div className="modal-body">
 
                                                     <ul className="stars" >
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
-                                                        <li className="star"><i className="fa fa-star"></i></li>
+                                                        <li className="star st_one" onClick={star_one}><i className="fa fa-star"></i></li>
+                                                        <li className="star st_two" onClick={star_two}><i className="fa fa-star"></i></li>
+                                                        <li className="star st_three" onClick={star_three}><i className="fa fa-star"></i></li>
+                                                        <li className="star st_four" onClick={star_four}><i className="fa fa-star"></i></li>
+                                                        <li className="star st_five" onClick={star_five}><i className="fa fa-star"></i></li>
                                                     </ul>
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                    <textarea
+                                                        name="review"
+                                                        id="review" className="form-control mt-3"
+                                                        value={comment}
+                                                        onChange={(e) => setComment(e.target.value)}                                   
+                                                    >
 
-                                </div>
-                            </div>
+                                                    </textarea>
+
+                                                    <button className="btn my-3 float-right review-btn px-4 text-white" onClick={reviewHandler}>Submit</button>
+                                                </div>
+                                :
+                                <div className="alert alert-danger mt-5" type='alert'>Login to post your review.</div>
+                            }
+
                         </div>
                     </div>
+
+                    {product.reviews && product.reviews.length > 0 && (
+                        <ListReviews reviews={product.reviews} />
+                    )}
 
                 </Fragment>
             )}
