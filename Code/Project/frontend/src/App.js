@@ -15,7 +15,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
 import OrderSuccess from './components/cart/OrderSuccess';
-import ListOrders from './components/orders/ListOrders';
+import ListOrders from './components/order/ListOrders';
 import Login from './components/user/Login'
 import ProtectedRoute from './components/route/ProtectedRoute'
 import Dashboard from './components/admin/Dashboard';
