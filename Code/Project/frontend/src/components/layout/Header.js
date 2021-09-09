@@ -59,7 +59,6 @@ const Header = () => {
                                     />
                                 </Link>
                                 <Link to="/me" id="header_name" style={{color: "white", backgroundColor: "#11ad11", 'borderRadius':'5px', textDecoration: 'none', padding: '0.25rem'}}>{user && user.name}</Link>
-                                <Link className="p-2" to="/orders/me" id="header_name" style={{ textDecoration: 'none' }}>Orders</Link>
                                 {user && user.role === 'admin' && (
                                     <Link className="p-2" to="/dashboard" id="header_name" style={{ textDecoration: 'none' }}>Dashboard</Link>
                                     
