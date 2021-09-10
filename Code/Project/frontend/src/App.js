@@ -19,6 +19,7 @@ import ListOrders from './components/order/ListOrders';
 import Login from './components/user/Login'
 import ProtectedRoute from './components/route/ProtectedRoute'
 import Dashboard from './components/admin/Dashboard';
+import ProductsList from './components/admin/ProductsList'
 import { loadUser } from './actions/userActions'
 import store from './store'
 
@@ -56,6 +57,7 @@ function App() {
     
     </div>
     <ProtectedRoute path = "/dashboard" isAdmin={true} component={Dashboard} exact />
+    <ProtectedRoute path = "/admin/products" isAdmin={true} component={ProductsList} exact />
     <Footer/>
     </div>
     </Router>

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
+import { DropdownButton, Dropdown } from 'react-bootstrap'
 
 const Sidebar = () => {
     return (
@@ -9,20 +11,20 @@ const Sidebar = () => {
                     <li>
                         <Link to="/dashboard"><i className="fa fa-tachometer"> Dashboard</i></Link>
                     </li>
-                    <li>
-                        <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" 
-                        className="dropdown-toggle">
-                            <i className="fa fa-product-hunt"></i>Products</a>
-                        <ul className="collapse list-unstyled" id="productSubmenu">
-                        <li>
-                        <Link to="/admin/products"><i className="fa fa-clipboard">ALL</i></Link>
-                    </li>
+                    
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success"  className="fa fa-product-hunt" style={{backgroundColor: "#1c8d1c", outline: "none"}}>
+                            &nbsp;Products
+                        </Dropdown.Toggle>
 
-                    <li>
-                        <Link to="/admin/product"><i className="fa fa-plus">Create</i></Link>
-                    </li>
-                        </ul>
-                    </li>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="/admin/products">
+                                All
+                            </Dropdown.Item>
+                            <Dropdown.Item to="/admin/products">Create</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    
                     <li>
                         <Link to="/admin/orders"><i className="fa fa-shopping-basket"></i>Orders</Link>
                     </li>
