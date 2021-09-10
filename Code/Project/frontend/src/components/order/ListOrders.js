@@ -55,6 +55,8 @@ const ListOrders = () => {
              ],
              rows: []
          }
+
+         const orderIDLink = '/order/' + orders._id;
          
          orders.forEach( order => {
              data.rows.push({
@@ -65,7 +67,7 @@ const ListOrders = () => {
                     ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                     : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
                  actions:
-                   <Link to={'/orders/${orders._id}'} className="btn btn-primary">
+                   <Link to={'/order/' + order._id} className="btn btn-primary">
                        <i className="fa fa-eye"></i>
                        </Link>   
              })

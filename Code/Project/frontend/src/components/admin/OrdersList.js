@@ -72,7 +72,7 @@ const OrdersList = () => {
                 ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                 : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
                 actions: <Fragment>
-                    <Link to={`/admin/order/order._id`} className="btn btn-primary py-1 px-2">
+                    <Link to={`/admin/order/` + order._id} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-eye"></i>
                     </Link>
                     <button className="btn btn-danger py-1 px-2 ml-2">

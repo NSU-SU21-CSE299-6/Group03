@@ -261,7 +261,8 @@ const ProductDetails = ({ match}) => {
                                  value={quantity} readOnly />
                                  <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                            </div>
-                           <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0} onClick={addToCart}>Add to Cart</button>
+                           &nbsp;
+                           <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0} onClick={addToCart} style={{backgroundColor: "#1c8d1c", color: "white"}}>Add to Cart</button>
                             <hr />
 
                             <p>Status: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >
@@ -292,7 +293,7 @@ const ProductDetails = ({ match}) => {
 
                                                     </textarea>
 
-                                                    <button className="btn my-3 float-right review-btn px-4 text-white" onClick={reviewHandler}>Submit</button>
+                                                    <button className="btn my-3 float-right review-btn px-4" onClick={reviewHandler} style={{backgroundColor: "#1c8d1c", color: "white"}}>Submit</button>
                                                 </div>
                                 :
                                 <div className="alert alert-danger mt-5" type='alert'>Login to post your review.</div>
