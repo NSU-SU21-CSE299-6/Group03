@@ -22,7 +22,7 @@ import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList'
 import { loadUser } from './actions/userActions'
 import store from './store'
-
+import OrderDetails from './components/order/OrderDetails';
 
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
     <ProtectedRoute path = "/success" component={OrderSuccess} />
     <ProtectedRoute path = "/Payment" component={Payment} />
     <ProtectedRoute path = "/orders/me" component={ListOrders} exact />
-    
+    <ProtectedRoute path = "/order/:id" component={OrderDetails} exact />
     </div>
     <ProtectedRoute path = "/dashboard" isAdmin={true} component={Dashboard} exact />
     <ProtectedRoute path = "/admin/products" isAdmin={true} component={ProductsList} exact />
