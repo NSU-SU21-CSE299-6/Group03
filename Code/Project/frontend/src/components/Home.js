@@ -163,7 +163,7 @@ const Home = ({ match }) => {
          </div>
         </section>
 
-        {resPerPage <= count && (
+        
                         <div className="d-flex justify-content-center mt-5">
                             <Pagination
                                 activePage={currentPage}
@@ -178,7 +178,7 @@ const Home = ({ match }) => {
                                 linkClass="page-link"
                             />
                         </div>
-                    )}
+                    
 
                 </Fragment>
             )}
