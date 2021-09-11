@@ -29,7 +29,10 @@ const Header = () => {
             <div className="col-12 col-md-3">
                 <div className="navbar-brand">
                   
-                    <p id="logo_name">  <img id="logo" src="images/logo1.png"/>Kaktarua</p>
+                <Link id="logo_name" to="/" style={{textDecoration: "none"}}>  
+                <img id="logo" src="images/logo1.png"/>
+                Kaktarua
+                </Link>
                 </div>
             </div>
             
