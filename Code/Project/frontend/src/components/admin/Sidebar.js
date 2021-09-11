@@ -21,7 +21,7 @@ const Sidebar = () => {
                             <Dropdown.Item href="/admin/products">
                                 All
                             </Dropdown.Item>
-                            <Dropdown.Item to="/admin/products">Create</Dropdown.Item>
+                            <Dropdown.Item href="/admin/product">Create</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     

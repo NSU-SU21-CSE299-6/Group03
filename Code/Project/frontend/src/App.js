@@ -24,6 +24,7 @@ import { loadUser } from './actions/userActions'
 import store from './store'
 import OrderDetails from './components/order/OrderDetails';
 import OrdersList from './components/admin/OrdersList';
+import NewProduct from './components/admin/NewProduct';
 
 function App() {
 
@@ -50,7 +51,7 @@ function App() {
 
     <Route path = "/cart" component={Cart} exact/>
     <ProtectedRoute path = "/shipping" component={Shipping} />
-    <ProtectedRoute path = "/order/confirm" component={ConfirmOrder} />
+    <ProtectedRoute path = "/confirm" component={ConfirmOrder}/>
     <ProtectedRoute path = "/success" component={OrderSuccess} />
     <ProtectedRoute path = "/Payment" component={Payment} />
     <ProtectedRoute path = "/orders/me" component={ListOrders} exact />
@@ -58,6 +59,7 @@ function App() {
     </div>
     <ProtectedRoute path = "/dashboard" isAdmin={true} component={Dashboard} exact />
     <ProtectedRoute path = "/admin/products" isAdmin={true} component={ProductsList} exact />
+    <ProtectedRoute path = "/admin/product" isAdmin={true} component={NewProduct} exact />
     <ProtectedRoute path = "/admin/orders" isAdmin={true} component={OrdersList} exact />
     <Footer/>
     </div>
