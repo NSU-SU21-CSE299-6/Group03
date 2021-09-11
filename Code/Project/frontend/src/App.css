@@ -103,8 +103,8 @@ nav {
 }
 
 .card-img-top {
-  max-height: 500px;
-  position: relative;
+  width: 200px !important;
+  height: 150px;
 }
 
 .card-font-size {
