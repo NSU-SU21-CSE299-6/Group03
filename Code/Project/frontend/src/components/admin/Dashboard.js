@@ -79,7 +79,7 @@ const Dashboard = () => {
                                         <b>{orders && orders.length}</b> 
                                         </div>
                                     </div>
-                                    <Link className="card-footer text-white clearfix small z-1" to="/admin/products">
+                                    <Link className="card-footer text-white clearfix small z-1" to="/admin/orders">
                                     <span className="float-left">View Details</span>
                                     <span className="float-right">
                                         <i className="fa fa-angle-right"></i>
